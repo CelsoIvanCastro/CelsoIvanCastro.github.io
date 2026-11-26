@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Celso Castro, desarrollador de software</title>
+<meta name="description" content="Portafolio de Celso Iván Castro Vizcarra, desarrollador de software junior en Culiacán, México. Proyectos con React, TypeScript, Electron y PostgreSQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F4F1;      /* papel de orden de trabajo */
+    --graphite: #22262B;   /* tinta */
+    --steel: #5E6670;      /* texto secundario */
+    --shopblue: #1E4D8C;   /* overol de taller */
+    --signal: #F2B705;     /* luz de estado */
+    --line: #C9CDD2;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--graphite);
+    font: 400 1.0625rem/1.6 "Source Serif 4", Georgia, serif; }
+  a { color: var(--shopblue); text-underline-offset: 3px; }
+  a:hover { color: var(--graphite); }
+  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+  .wrap { max-width: 68rem; margin: 0 auto; padding-inline: 1.5rem; }
+  .sans { font-family: Archivo, system-ui, sans-serif; }
+
+  /* Hero */
+  header { padding-block: 3rem 4rem; }
+  .status { display: inline-flex; align-items: center; gap: .6rem; font: 600 .9rem/1 Archivo, sans-serif; color: var(--graphite); }
+  .lamp { width: .7rem; height: .7rem; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 4px rgba(242,183,5,.25); }
+  h1 { font: 800 clamp(3.4rem, 13vw, 9.5rem)/.86 Archivo, sans-serif; font-stretch: 125%; letter-spacing: -.03em; margin: 2.5rem 0 1.75rem; color: var(--graphite); }
+  h1 span { display: block; font-stretch: 62%; font-weight: 400; color: var(--shopblue); }
+  .lede { max-width: 36rem; font-size: 1.3rem; line-height: 1.5; margin: 0 0 2rem; }
+  .links { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; font: 600 1rem/1 Archivo, sans-serif; }
+
+  /* Secciones */
+  section { padding-block: 3.5rem; border-top: 2px solid var(--graphite); }
+  h2 { font: 700 1.75rem/1.1 Archivo, sans-serif; font-stretch: 110%; margin: 0 0 2rem; }
+
+  /* Fichas de proyecto: formato de orden de trabajo */
+  .job { display: grid; grid-template-columns: 15rem 1fr; gap: 1rem 3rem; padding: 2rem 0; border-top: 1px solid var(--line); }
+  .job:first-of-type { border-top: 0; padding-top: 0; }
+  .job h3 { font: 700 1.6rem/1.1 Archivo, sans-serif; font-stretch: 100%; margin: 0 0 .75rem; }
+  .job.lead h3 { font-size: clamp(2rem, 4vw, 2.8rem); font-stretch: 115%; }
+  .job p { margin: 0 0 .75rem; max-width: 40rem; }
+  dl.spec { margin: 0; font: 400 .9rem/1.4 Archivo, sans-serif; display: grid; grid-template-columns: auto 1fr; gap: .45rem .9rem; align-content: start; }
+  dl.spec dt { color: var(--steel); }
+  dl.spec dd { margin: 0; font-weight: 600; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .two p { margin: 0 0 1rem; max-width: 34rem; }
+  ul.plain { list-style: none; padding: 0; margin: 0; }
+  ul.plain li { padding: .55rem 0; border-bottom: 1px solid var(--line); }
+  ul.plain small { display: block; color: var(--steel); font: 400 .85rem/1.4 Archivo, sans-serif; }
+
+  .stack { font: 400 1rem/1.7 Archivo, sans-serif; }
+  .stack b { font-weight: 700; }
+
+  footer { padding-block: 3.5rem 4rem; border-top: 2px solid var(--graphite); }
+  footer .big { font: 700 clamp(1.6rem, 5vw, 3rem)/1.15 Archivo, sans-serif; font-stretch: 112%; margin: 0 0 1.5rem; }
+  footer .big a { color: var(--graphite); }
+  footer .big a:hover { color: var(--shopblue); }
+
+  @media (max-width: 760px) {
+    .job, .two { grid-template-columns: 1fr; gap: 1rem; }
+    dl.spec { order: 2; }
+    header { padding-block-end: 3rem; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lamp { animation: blink 2.4s ease-in-out infinite; }
+    @keyframes blink { 50% { box-shadow: 0 0 0 7px rgba(242,183,5,.12); } }
+  }
+  .job figure { grid-column: 1 / -1; margin: .5rem 0 0; }
+  .job figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+  .job .duo { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: start; }
+  figcaption { font: 400 .85rem/1.4 Archivo, sans-serif; color: var(--steel); margin-top: .5rem; }
+  @media (max-width: 760px) { .job .duo { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="status"><span class="lamp" aria-hidden="true"></span>Disponible para trabajo remoto de medio tiempo</div>
+  <h1>Celso Castro<span>desarrollador de software</span></h1>
+  <p class="lede">Estudio Ingeniería en Desarrollo de Software en Culiacán y llevo un año haciendo proyectos web como freelance. Escribo software para problemas que conozco de cerca, empezando por el taller de mi familia. Aquí hay cinco proyectos completos, con código y capturas.</p>
+  <nav class="links" aria-label="Contacto">
+    <a href="https://github.com/CelsoIvanCastro">GitHub</a>
+    <a href="https://www.linkedin.com/in/celso-ivan-castro-vizcarra-b75449452/">LinkedIn</a>
+    <a href="mailto:celsoivan2007@gmail.com">celsoivan2007@gmail.com</a>
+  </nav>
+</header>
+
+<main>
+<section class="wrap" id="proyectos" aria-labelledby="h-proyectos">
+  <h2 id="h-proyectos">Proyectos</h2>
+
+  <article class="job lead">
+    <dl class="spec">
+      <dt>Tipo</dt><dd>App de escritorio, macOS</dd>
+      <dt>Stack</dt><dd>Electron, React, TypeScript, Node.js, SQLite, Three.js</dd>
+      <dt>Código</dt><dd><a href="https://github.com/CelsoIvanCastro/blackline-garage-os">blackline-garage-os</a></dd>
+    </dl>
+    <div>
+      <h3>Blackline Garage OS</h3>
+      <p>En el taller llevábamos cada restauración entre fotos sueltas, notas y una hoja de cálculo. Blackline junta todo en una sola app: cada vehículo tiene su historial de estados, inventario de piezas, costos y documentación fotográfica.</p>
+      <p>Incluye un gemelo digital 3D del vehículo y guarda los datos en local, sin depender de internet.</p>
+    </div>
+    <figure>
+      <div class="duo">
+        <img src="img/blackline.png" width="1600" height="1000" alt="Panel de Blackline Garage OS con el pipeline del taller, la lista de vehículos y el gemelo digital 3D de una Chevrolet C10." loading="lazy">
+        <img src="img/blackline-3d.png" width="830" height="610" alt="Acercamiento al gemelo digital 3D de la pickup con marcadores de piezas por estado." loading="lazy">
+      </div>
+      <figcaption>Modo demostración con datos ficticios. Cada punto de color en el modelo 3D es una pieza con su estado: dañada, en proceso, comprada o terminada.</figcaption>
+    </figure>
+  </article>
+
+  <article class="job">
+    <dl class="spec">
+      <dt>Tipo</dt><dd>Plataforma web</dd>
+      <dt>Stack</dt><dd>PostgreSQL, Aiven, Render</dd>
+      <dt>Código</dt><dd><a href="https://github.com/CelsoIvanCastro/easywork">easywork</a></dd>
+    </dl>
+    <div>
+      <h3>EasyWork</h3>
+      <p>Plataforma para centralizar los procesos internos de una empresa: estructura organizacional, usuarios con roles y permisos, tareas, inventarios, documentos y bitácora de auditoría. La base de datos vive en la nube con Aiven y el servicio está desplegado y monitoreado en Render.</p>
+    </div>
+    <figure><img src="img/easywork.png" width="1600" height="1000" alt="Inicio de EasyWork con pendientes urgentes de la empresa y resumen de personal, expedientes y vencimientos." loading="lazy"><figcaption>Datos de demostración sintéticos.</figcaption></figure>
+  </article>
+
+  <article class="job">
+    <dl class="spec">
+      <dt>Tipo</dt><dd>Plataforma web</dd>
+      <dt>Stack</dt><dd>Next.js, TypeScript, PostgreSQL, Better Auth</dd>
+      <dt>Código</dt><dd><a href="https://github.com/CelsoIvanCastro/vistobueno">vistobueno</a></dd>
+      <dt>En vivo</dt><dd><a href="https://vistobueno-pruebas.netlify.app">Abrir sitio</a></dd>
+    </dl>
+    <div>
+      <h3>VistoBueno</h3>
+      <p>Plataforma para que diseñadores compartan una pieza con su cliente, reciban comentarios y guarden la aprobación de cada versión. Tiene autenticación, PostgreSQL con migraciones y pruebas automatizadas, y está publicada en <a href="https://vistobueno-pruebas.netlify.app">vistobueno-pruebas.netlify.app</a>.</p>
+    </div>
+    <figure><img src="img/vistobueno.png" width="1600" height="1000" alt="Página de inicio de VistoBueno con una animación que muestra cómo un cliente revisa y aprueba un diseño." loading="lazy"></figure>
+  </article>
+
+  <article class="job">
+    <dl class="spec">
+      <dt>Tipo</dt><dd>Sitio web</dd>
+      <dt>Stack</dt><dd>Next.js, React, TypeScript</dd>
+      <dt>Código</dt><dd><a href="https://github.com/CelsoIvanCastro/orbix">orbix</a></dd>
+    </dl>
+    <div>
+      <h3>Orbix</h3>
+      <p>Catálogo digital de mobiliario con páginas de producto, carrito e inicio de sesión, con interfaces animadas pensadas para la experiencia de compra.</p>
+    </div>
+    <figure><img src="img/orbix.png" width="1600" height="1000" alt="Portada de Orbix con el logotipo geométrico en negro, rojo, verde y amarillo." loading="lazy"></figure>
+  </article>
+
+  <article class="job">
+    <dl class="spec">
+      <dt>Tipo</dt><dd>Proyecto académico</dd>
+      <dt>Stack</dt><dd>Java, Swing, JDBC, MySQL</dd>
+      <dt>Código</dt><dd><a href="https://github.com/CelsoIvanCastro/tamales-galacticos">tamales-galacticos</a></dd>
+    </dl>
+    <div>
+      <h3>Tamales Galácticos</h3>
+      <p>Sistema de escritorio en Java (Swing y JDBC sobre MySQL) para operar un negocio de tamales de punta a punta: recetas e ingredientes, producción, movimientos de inventario, pedidos de clientes y personal. Son más de 2,000 líneas de Java sobre un modelo relacional de 14 tablas y 17 llaves foráneas, con un modelo de costeo que define el precio de cada producto.</p>
+    </div>
+    <figure><img src="img/tamales-er.svg" width="1200" height="600" alt="Diagrama entidad-relación de 14 tablas agrupadas en clientes y ventas, catálogo y recetas, producción e inventario, y personal." loading="lazy"><figcaption>El modelo cubre el ciclo completo del negocio: de la receta y la materia prima a la producción, el pedido y la entrega.</figcaption></figure>
+  </article>
+</section>
+
+<section class="wrap" aria-labelledby="h-sobre">
+  <h2 id="h-sobre">Sobre mí</h2>
+  <div class="two">
+    <div>
+      <p>Llevo un año haciendo proyectos web como freelance y dos años trabajando en el negocio de detallado automotriz de mi familia. También tuve un emprendimiento de gorras y accesorios, donde aprendí a manejar inventario y catálogo.</p>
+      <p>Me interesan la arquitectura de software y la automatización de procesos. Uso herramientas de IA para programar más rápido, y reviso y pruebo lo que entrego.</p>
+      <p class="stack"><b>Trabajo con</b> JavaScript, TypeScript, React, Node.js, Electron, Java, Python, SQL, PostgreSQL, SQLite, Linux y Mendix. Hablo español nativo e inglés B2.</p>
+    </div>
+    <div>
+      <ul class="plain" aria-label="Formación y certificaciones">
+        <li>Ingeniería en Desarrollo de Software<small>Universidad Tecmilenio, desde agosto de 2025</small></li>
+        <li>AWS Academy Graduate, Cloud Foundations<small>Amazon Web Services, 2025</small></li>
+        <li>Red Hat System Administration I (RH124)<small>Red Hat Academy, 2026</small></li>
+        <li>Python Essentials 1 e Introduction to Data Science<small>Cisco Networking Academy</small></li>
+        <li>Mendix Rapid Developer<small>Mendix, noviembre de 2026</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <p class="big">¿Tienes un proyecto o una vacante? Escríbeme a <a href="mailto:celsoivan2007@gmail.com">celsoivan2007@gmail.com</a></p>
+  <nav class="links" aria-label="Perfiles">
+    <a href="https://github.com/CelsoIvanCastro">GitHub</a>
+    <a href="https://www.linkedin.com/in/celso-ivan-castro-vizcarra-b75449452/">LinkedIn</a>
+  </nav>
+</footer>
+
+</body>
+</html>
